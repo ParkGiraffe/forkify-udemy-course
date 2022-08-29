@@ -113,7 +113,7 @@ class RecipeView extends View{
           <ul class="recipe__ingredient-list">
             ${this._data.ingredients
               .map(this._generateMarkupIngredient) // === .map(ing => this._generateMarkupIngredient(ing))
-              .join('').trim()}
+              .join('')}
           </ul>
         </div>
 
