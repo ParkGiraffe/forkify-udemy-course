@@ -43,7 +43,7 @@ class RecipeView extends View{
         <use href="${icons}#icon-check"></use>
       </svg>
       <div class="recipe__quantity">${
-        ing.quantity ? numberToFraction(ing.quantity).toString().trim() : ''
+        ing.quantity ? numberToFraction(ing.quantity).toString() : ''
       }</div>
       <div class="recipe__description">
         <span class="recipe__unit">${ing.unit}</span>
@@ -113,7 +113,7 @@ class RecipeView extends View{
           <ul class="recipe__ingredient-list">
             ${this._data.ingredients
               .map(this._generateMarkupIngredient) // === .map(ing => this._generateMarkupIngredient(ing))
-              .join('')}
+              .join('').trim()}
           </ul>
         </div>
 
