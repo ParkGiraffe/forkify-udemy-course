@@ -1,7 +1,7 @@
 import View from './view';
 import icons from 'url:../../img/icons.svg';
-import { Fraction } from 'fractional';
- 
+import { numberToFraction } from './helper';
+
 class RecipeView extends View{
   // 뷰는 클래스 형식으로 구현한다. View라는 부모 클래스를 만들어서 각 뷰마다 상속하면 매우 좋다.
   // 팁! - 각 뷰에 parentElement 변수를 만들어서, 해당 뷰가 담겨질 부모 요소를 저장해놓으면 정말 편한다.
@@ -43,7 +43,7 @@ class RecipeView extends View{
         <use href="${icons}.svg#icon-check"></use>
       </svg>
       <div class="recipe__quantity">${
-        ing.quantity ? new Fraction(ing.quantity).toString() : ''
+        ing.quantity ? numberToFraction(ing.quantity).toString() : ''
       }</div>
       <div class="recipe__description">
         <span class="recipe__unit">${ing.unit}</span>
